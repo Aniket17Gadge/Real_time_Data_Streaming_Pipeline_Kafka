@@ -32,3 +32,29 @@ This project builds a real-time data streaming pipeline using AWS services. Kafk
 7.EC2
 
 8.Apache Kafka
+
+## Steps to Set Up:
+
+### 1.Launch EC2 Instance and Set up Apache Kafka:
+
+-Create EC2 Instance And Start the EC2 Instance.
+
+-Connect Via SSH Client.
+
+-Follow The Steps and Command According to **command_kafka.txt** for setup Kafka and to create Producer And Consumer.
+
+### 2.Create Python Script to Create kakfa Producer and Consumer and Stream The Data form Dataset In Loop:
+
+-Create 2 Python Note books **kafka_producer.ipynb** & **kafka_consumer.ipynb**
+
+-In this python notebooks we create producer and consumer which produce the data form dataset in loop with delay of 1 sec to get real time data flow replica and consumer counsumes data in json format and pass to s3 bucket
+
+### 3.Create S3 Bucket,Crawler,Data Catalog:
+
+-To Store the Data in RealTime Create S3 Bucket and In **kafka_consumer.ipynb** give path to consumer of s3 bucket to save the data.
+
+-Create glue Crawler and give Name to it and set data source of our s3 bucket And start The Crawler.
+
+-Once Crawler stop and get Successed Meassage the our table  is created in Database.
+
+-Go to athena open query editor andunder database you get table and you can see the real time data and now we can run query on that data and do analysis.
